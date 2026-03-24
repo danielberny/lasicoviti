@@ -10,6 +10,23 @@
                                               rdfs:comment "Ontologie zabývající se lasicovitými šelmami" .
 
 #################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/2026/lasicoviti#jeRodemPro
+:jeRodemPro rdf:type owl:ObjectProperty ;
+            owl:inverseOf :patriDoRodu ;
+            rdfs:domain :Latinsky ;
+            rdfs:range :Zivocich .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#patriDoRodu
+:patriDoRodu rdf:type owl:ObjectProperty ;
+             rdfs:domain :Zivocich ;
+             rdfs:range :Latinsky .
+
+
+#################################################################
 #    Classes
 #################################################################
 
