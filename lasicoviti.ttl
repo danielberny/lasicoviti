@@ -10,71 +10,337 @@
                                               rdfs:comment "Ontologie zabývající se lasicovitými šelmami" .
 
 #################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/2026/lasicoviti#jeRodemPro
+:jeRodemPro rdf:type owl:ObjectProperty ;
+            owl:inverseOf :patriDoRodu ;
+            rdfs:domain :Latinsky ;
+            rdfs:range :Zivocich .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#patriDoRodu
+:patriDoRodu rdf:type owl:ObjectProperty ;
+             rdfs:domain :Zivocich ;
+             rdfs:range :Latinsky .
+
+
+#################################################################
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/2026/lasicoviti#AlternativniNazvy
-:AlternativniNazvy rdf:type owl:Class .
+###  http://www.semanticweb.org/2026/lasicoviti#Arctonyx
+:Arctonyx rdf:type owl:Class ;
+          rdfs:subClassOf :Melinae .
 
 
-###  http://www.semanticweb.org/2026/lasicoviti#Jezevci
-:Jezevci rdf:type owl:Class ;
-         rdfs:subClassOf :Podceledi .
+###  http://www.semanticweb.org/2026/lasicoviti#Eira
+:Eira rdf:type owl:Class ;
+      rdfs:subClassOf :Mustelinae .
 
 
-###  http://www.semanticweb.org/2026/lasicoviti#Kunoviti
-:Kunoviti rdf:type owl:Class ;
-          rdfs:subClassOf :AlternativniNazvy .
+###  http://www.semanticweb.org/2026/lasicoviti#Enhydra
+:Enhydra rdf:type owl:Class ;
+         rdfs:subClassOf :Lutrinae .
 
 
-###  http://www.semanticweb.org/2026/lasicoviti#Kuny
-:Kuny rdf:type owl:Class ;
-      rdfs:subClassOf :Podceledi .
+###  http://www.semanticweb.org/2026/lasicoviti#Grizon
+:Grizon rdf:type owl:Class ;
+        rdfs:subClassOf :Lasicoviti .
 
 
-###  http://www.semanticweb.org/2026/lasicoviti#Medojedi
-:Medojedi rdf:type owl:Class ;
-          rdfs:subClassOf :Podceledi .
+###  http://www.semanticweb.org/2026/lasicoviti#Gulo
+:Gulo rdf:type owl:Class ;
+      rdfs:subClassOf :Mustelinae .
 
 
-###  http://www.semanticweb.org/2026/lasicoviti#Podceledi
-:Podceledi rdf:type owl:Class .
+###  http://www.semanticweb.org/2026/lasicoviti#Jezevec
+:Jezevec rdf:type owl:Class ;
+         rdfs:subClassOf :Lasicoviti .
 
 
-###  http://www.semanticweb.org/2026/lasicoviti#SelmyKunovite
-:SelmyKunovite rdf:type owl:Class ;
-               rdfs:subClassOf :AlternativniNazvy .
+###  http://www.semanticweb.org/2026/lasicoviti#JezevecAmericky
+:JezevecAmericky rdf:type owl:Class ;
+                 rdfs:subClassOf :Jezevec ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :patriDoRodu ;
+                                   owl:someValuesFrom :Taxidea
+                                 ] .
 
 
-###  http://www.semanticweb.org/2026/lasicoviti#SelmyLasicovite
-:SelmyLasicovite rdf:type owl:Class ;
-                 rdfs:subClassOf :AlternativniNazvy .
+###  http://www.semanticweb.org/2026/lasicoviti#JezevecBelohrdly
+:JezevecBelohrdly rdf:type owl:Class ;
+                  rdfs:subClassOf :Jezevec ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :patriDoRodu ;
+                                    owl:someValuesFrom :Arctonyx
+                                  ] .
 
 
-###  http://www.semanticweb.org/2026/lasicoviti#Vydry
-:Vydry rdf:type owl:Class ;
-       rdfs:subClassOf :Podceledi .
+###  http://www.semanticweb.org/2026/lasicoviti#JezevecHnedy
+:JezevecHnedy rdf:type owl:Class ;
+              rdfs:subClassOf :Jezevec ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :patriDoRodu ;
+                                owl:someValuesFrom :Melogale
+                              ] .
 
 
-#################################################################
-#    General axioms
-#################################################################
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Jezevci
-                :Kuny
-                :Medojedi
-                :Vydry
-              )
-] .
+###  http://www.semanticweb.org/2026/lasicoviti#JezevecJaponsky
+:JezevecJaponsky rdf:type owl:Class ;
+                 rdfs:subClassOf :Jezevec ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :patriDoRodu ;
+                                   owl:someValuesFrom :Meles
+                                 ] .
 
 
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Kunoviti
-                :SelmyKunovite
-                :SelmyLasicovite
-              )
-] .
+###  http://www.semanticweb.org/2026/lasicoviti#JezevecLesni
+:JezevecLesni rdf:type owl:Class ;
+              rdfs:subClassOf :Jezevec ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :patriDoRodu ;
+                                owl:someValuesFrom :Meles
+                              ] .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#JezevecTibetsky
+:JezevecTibetsky rdf:type owl:Class ;
+                 rdfs:subClassOf :Jezevec ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :patriDoRodu ;
+                                   owl:someValuesFrom :Arctonyx
+                                 ] .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Kuna
+:Kuna rdf:type owl:Class ;
+      rdfs:subClassOf :Lasicoviti .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#KunaBrazilska
+:KunaBrazilska rdf:type owl:Class ;
+               rdfs:subClassOf :Kuna ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :patriDoRodu ;
+                                 owl:someValuesFrom :Eira
+                               ] .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Lasice
+:Lasice rdf:type owl:Class ;
+        rdfs:subClassOf :Lasicoviti .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#LasiceHranostaj
+:LasiceHranostaj rdf:type owl:Class ;
+                 rdfs:subClassOf :Lasice ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :patriDoRodu ;
+                                   owl:someValuesFrom :Mustela
+                                 ] .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#LasiceKolcava
+:LasiceKolcava rdf:type owl:Class ;
+               rdfs:subClassOf :Lasice ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :patriDoRodu ;
+                                 owl:someValuesFrom :Mustela
+                               ] .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Lasicoviti
+:Lasicoviti rdf:type owl:Class ;
+            rdfs:subClassOf :Zivocich ;
+            rdfs:label "kunovití"@cs ,
+                       "šelmy kunovité"@cs ,
+                       "šelmy lasicovité"@cs .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Latinsky
+:Latinsky rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Lontra
+:Lontra rdf:type owl:Class ;
+        rdfs:subClassOf :Lutrinae .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Lutra
+:Lutra rdf:type owl:Class ;
+       rdfs:subClassOf :Lutrinae .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Lutrinae
+:Lutrinae rdf:type owl:Class ;
+          rdfs:subClassOf :Latinsky .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Medojed
+:Medojed rdf:type owl:Class ;
+         rdfs:subClassOf :Lasicoviti .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#MedojedKapsky
+:MedojedKapsky rdf:type owl:Class ;
+               rdfs:subClassOf :Medojed ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :patriDoRodu ;
+                                 owl:someValuesFrom :Mellivora
+                               ] .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Meles
+:Meles rdf:type owl:Class ;
+       rdfs:subClassOf :Melinae .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Melinae
+:Melinae rdf:type owl:Class ;
+         rdfs:subClassOf :Latinsky .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Mellivora
+:Mellivora rdf:type owl:Class ;
+           rdfs:subClassOf :Mellivorinae .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Mellivorinae
+:Mellivorinae rdf:type owl:Class ;
+              rdfs:subClassOf :Latinsky .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Melogale
+:Melogale rdf:type owl:Class ;
+          rdfs:subClassOf :Melinae .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Mustela
+:Mustela rdf:type owl:Class ;
+         rdfs:subClassOf :Mustelinae .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Mustelinae
+:Mustelinae rdf:type owl:Class ;
+            rdfs:subClassOf :Latinsky .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Norek
+:Norek rdf:type owl:Class ;
+       rdfs:subClassOf :Lasicoviti .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#NorekEvropsky
+:NorekEvropsky rdf:type owl:Class ;
+               rdfs:subClassOf :Norek ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :patriDoRodu ;
+                                 owl:someValuesFrom :Mustela
+                               ] .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Rosomak
+:Rosomak rdf:type owl:Class ;
+         rdfs:subClassOf :Lasicoviti .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#RosomakSibirsky
+:RosomakSibirsky rdf:type owl:Class ;
+                 rdfs:subClassOf :Rosomak ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :patriDoRodu ;
+                                   owl:someValuesFrom :Gulo
+                                 ] .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Sobol
+:Sobol rdf:type owl:Class ;
+       rdfs:subClassOf :Lasicoviti .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Taxidea
+:Taxidea rdf:type owl:Class ;
+         rdfs:subClassOf :Taxidiinae .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Taxidiinae
+:Taxidiinae rdf:type owl:Class ;
+            rdfs:subClassOf :Latinsky .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Tchor
+:Tchor rdf:type owl:Class ;
+       rdfs:subClassOf :Lasicoviti .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#TchorStepni
+:TchorStepni rdf:type owl:Class ;
+             rdfs:subClassOf :Tchor ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :patriDoRodu ;
+                               owl:someValuesFrom :Mustela
+                             ] .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Vydra
+:Vydra rdf:type owl:Class ;
+       rdfs:subClassOf :Lasicoviti .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#VydraJihoamericka
+:VydraJihoamericka rdf:type owl:Class ;
+                   rdfs:subClassOf :Vydra ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :patriDoRodu ;
+                                     owl:someValuesFrom :Lontra
+                                   ] .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#VydraMala
+:VydraMala rdf:type owl:Class ;
+           rdfs:subClassOf :Vydra ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :patriDoRodu ;
+                             owl:someValuesFrom :Lutra
+                           ] .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#VydraMorska
+:VydraMorska rdf:type owl:Class ;
+             rdfs:subClassOf :Vydra ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :patriDoRodu ;
+                               owl:someValuesFrom :Enhydra
+                             ] .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#VydraRicni
+:VydraRicni rdf:type owl:Class ;
+            rdfs:subClassOf :Vydra ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :patriDoRodu ;
+                              owl:someValuesFrom :Lutra
+                            ] .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#VydraSeveroamericka
+:VydraSeveroamericka rdf:type owl:Class ;
+                     rdfs:subClassOf :Vydra ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :patriDoRodu ;
+                                       owl:someValuesFrom :Lontra
+                                     ] .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Zivocich
+:Zivocich rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Zorila
+:Zorila rdf:type owl:Class ;
+        rdfs:subClassOf :Lasicoviti .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
