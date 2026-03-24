@@ -30,10 +30,6 @@
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/2026/lasicoviti#AlternativniNazvy
-:AlternativniNazvy rdf:type owl:Class .
-
-
 ###  http://www.semanticweb.org/2026/lasicoviti#Arctonyx
 :Arctonyx rdf:type owl:Class ;
           rdfs:subClassOf :Melinae .
@@ -132,11 +128,6 @@
                                ] .
 
 
-###  http://www.semanticweb.org/2026/lasicoviti#Kunoviti
-:Kunoviti rdf:type owl:Class ;
-          rdfs:subClassOf :AlternativniNazvy .
-
-
 ###  http://www.semanticweb.org/2026/lasicoviti#Lasice
 :Lasice rdf:type owl:Class ;
         rdfs:subClassOf :Lasicoviti .
@@ -162,7 +153,10 @@
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Lasicoviti
 :Lasicoviti rdf:type owl:Class ;
-            rdfs:subClassOf :Zivocich .
+            rdfs:subClassOf :Zivocich ;
+            rdfs:label "kunovití"@cs ,
+                       "šelmy kunovité"@cs ,
+                       "šelmy lasicovité"@cs .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Latinsky
@@ -259,16 +253,6 @@
                                    owl:onProperty :patriDoRodu ;
                                    owl:someValuesFrom :Gulo
                                  ] .
-
-
-###  http://www.semanticweb.org/2026/lasicoviti#SelmyKunovite
-:SelmyKunovite rdf:type owl:Class ;
-               rdfs:subClassOf :AlternativniNazvy .
-
-
-###  http://www.semanticweb.org/2026/lasicoviti#SelmyLasicovite
-:SelmyLasicovite rdf:type owl:Class ;
-                 rdfs:subClassOf :AlternativniNazvy .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Sobol
