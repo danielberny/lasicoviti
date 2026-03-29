@@ -20,6 +20,13 @@
           rdfs:range :Zivocich .
 
 
+###  http://www.semanticweb.org/2026/lasicoviti#jeMistoVyskytuPro
+:jeMistoVyskytuPro rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :maMistoVyskytu ;
+                   rdfs:domain :MistoVyskytu ;
+                   rdfs:range :Zivocich .
+
+
 ###  http://www.semanticweb.org/2026/lasicoviti#jePodceledi
 :jePodceledi rdf:type owl:ObjectProperty ;
              owl:inverseOf :partiDoPodceledi ;
@@ -32,6 +39,12 @@
         owl:inverseOf :patriDoRodu ;
         rdfs:domain :Rod ;
         rdfs:range :Zivocich .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#maMistoVyskytu
+:maMistoVyskytu rdf:type owl:ObjectProperty ;
+                rdfs:domain :Zivocich ;
+                rdfs:range :MistoVyskytu .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#partiDoPodceledi
@@ -56,10 +69,20 @@
 #    Classes
 #################################################################
 
+###  http://www.semanticweb.org/2026/lasicoviti#Afrika
+:Afrika rdf:type owl:Class ;
+        rdfs:subClassOf :MistoVyskytu .
+
+
 ###  http://www.semanticweb.org/2026/lasicoviti#Arctonyx
 :Arctonyx rdf:type owl:Class ;
           rdfs:subClassOf :Melinae ,
                           :Rod .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Asie
+:Asie rdf:type owl:Class ;
+      rdfs:subClassOf :MistoVyskytu .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Celed
@@ -78,15 +101,37 @@
                          :Rod .
 
 
+###  http://www.semanticweb.org/2026/lasicoviti#Evropa
+:Evropa rdf:type owl:Class ;
+        rdfs:subClassOf :MistoVyskytu .
+
+
 ###  http://www.semanticweb.org/2026/lasicoviti#Grizon
 :Grizon rdf:type owl:Class ;
-        rdfs:subClassOf :Zivocich .
+        rdfs:subClassOf :Zivocich ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :maMistoVyskytu ;
+                          owl:someValuesFrom :JizniAmerika
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :maMistoVyskytu ;
+                          owl:someValuesFrom :JizniMexiko
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :maMistoVyskytu ;
+                          owl:someValuesFrom :StredniAmerika
+                        ] .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Gulo
 :Gulo rdf:type owl:Class ;
       rdfs:subClassOf :Mustelinae ,
                       :Rod .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#Indonesie
+:Indonesie rdf:type owl:Class ;
+           rdfs:subClassOf :MistoVyskytu .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Jezevec
@@ -97,6 +142,10 @@
 ###  http://www.semanticweb.org/2026/lasicoviti#JezevecAmericky
 :JezevecAmericky rdf:type owl:Class ;
                  rdfs:subClassOf :Jezevec ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :maMistoVyskytu ;
+                                   owl:someValuesFrom :SeverniAmerika
+                                 ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :partiDoPodceledi ;
                                    owl:someValuesFrom :Taxidiinae
@@ -116,6 +165,10 @@
 :JezevecBelohrdly rdf:type owl:Class ;
                   rdfs:subClassOf :Jezevec ,
                                   [ rdf:type owl:Restriction ;
+                                    owl:onProperty :maMistoVyskytu ;
+                                    owl:someValuesFrom :Asie
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty :partiDoPodceledi ;
                                     owl:someValuesFrom :Melinae
                                   ] ,
@@ -133,6 +186,10 @@
 ###  http://www.semanticweb.org/2026/lasicoviti#JezevecHnedy
 :JezevecHnedy rdf:type owl:Class ;
               rdfs:subClassOf :Jezevec ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :maMistoVyskytu ;
+                                owl:someValuesFrom :Indonesie
+                              ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty :partiDoPodceledi ;
                                 owl:someValuesFrom :Melinae
@@ -152,6 +209,10 @@
 :JezevecJaponsky rdf:type owl:Class ;
                  rdfs:subClassOf :Jezevec ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty :maMistoVyskytu ;
+                                   owl:someValuesFrom :Asie
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty :partiDoPodceledi ;
                                    owl:someValuesFrom :Melinae
                                  ] ,
@@ -169,6 +230,14 @@
 ###  http://www.semanticweb.org/2026/lasicoviti#JezevecLesni
 :JezevecLesni rdf:type owl:Class ;
               rdfs:subClassOf :Jezevec ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :maMistoVyskytu ;
+                                owl:someValuesFrom :Asie
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :maMistoVyskytu ;
+                                owl:someValuesFrom :Evropa
+                              ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty :partiDoPodceledi ;
                                 owl:someValuesFrom :Melinae
@@ -188,6 +257,10 @@
 :JezevecTibetsky rdf:type owl:Class ;
                  rdfs:subClassOf :Jezevec ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty :maMistoVyskytu ;
+                                   owl:someValuesFrom :Asie
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty :partiDoPodceledi ;
                                    owl:someValuesFrom :Melinae
                                  ] ,
@@ -202,6 +275,21 @@
                  rdfs:label "Arctonyx albogularis"@la .
 
 
+###  http://www.semanticweb.org/2026/lasicoviti#JizniAmerika
+:JizniAmerika rdf:type owl:Class ;
+              rdfs:subClassOf :MistoVyskytu .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#JizniAsie
+:JizniAsie rdf:type owl:Class ;
+           rdfs:subClassOf :MistoVyskytu .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#JizniMexiko
+:JizniMexiko rdf:type owl:Class ;
+             rdfs:subClassOf :MistoVyskytu .
+
+
 ###  http://www.semanticweb.org/2026/lasicoviti#Kuna
 :Kuna rdf:type owl:Class ;
       rdfs:subClassOf :Zivocich .
@@ -210,6 +298,14 @@
 ###  http://www.semanticweb.org/2026/lasicoviti#KunaBrazilska
 :KunaBrazilska rdf:type owl:Class ;
                rdfs:subClassOf :Kuna ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :maMistoVyskytu ;
+                                 owl:someValuesFrom :JizniAmerika
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :maMistoVyskytu ;
+                                 owl:someValuesFrom :StredniAmerika
+                               ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty :partiDoPodceledi ;
                                  owl:someValuesFrom :Mustelinae
@@ -234,6 +330,18 @@
 :LasiceHranostaj rdf:type owl:Class ;
                  rdfs:subClassOf :Lasice ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty :maMistoVyskytu ;
+                                   owl:someValuesFrom :Asie
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :maMistoVyskytu ;
+                                   owl:someValuesFrom :Evropa
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :maMistoVyskytu ;
+                                   owl:someValuesFrom :SeverniAmerika
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty :partiDoPodceledi ;
                                    owl:someValuesFrom :Mustelinae
                                  ] ,
@@ -251,6 +359,22 @@
 ###  http://www.semanticweb.org/2026/lasicoviti#LasiceKolcava
 :LasiceKolcava rdf:type owl:Class ;
                rdfs:subClassOf :Lasice ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :maMistoVyskytu ;
+                                 owl:someValuesFrom :Asie
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :maMistoVyskytu ;
+                                 owl:someValuesFrom :Evropa
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :maMistoVyskytu ;
+                                 owl:someValuesFrom :SeverniAfrika
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :maMistoVyskytu ;
+                                 owl:someValuesFrom :SeverniAmerika
+                               ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty :partiDoPodceledi ;
                                  owl:someValuesFrom :Mustelinae
@@ -292,6 +416,14 @@
 ###  http://www.semanticweb.org/2026/lasicoviti#MedojedKapsky
 :MedojedKapsky rdf:type owl:Class ;
                rdfs:subClassOf :Medojed ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :maMistoVyskytu ;
+                                 owl:someValuesFrom :Afrika
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :maMistoVyskytu ;
+                                 owl:someValuesFrom :JizniAsie
+                               ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty :partiDoPodceledi ;
                                  owl:someValuesFrom :Mellivorinae
@@ -337,6 +469,10 @@
                           :Rod .
 
 
+###  http://www.semanticweb.org/2026/lasicoviti#MistoVyskytu
+:MistoVyskytu rdf:type owl:Class .
+
+
 ###  http://www.semanticweb.org/2026/lasicoviti#Mustela
 :Mustela rdf:type owl:Class ;
          rdfs:subClassOf :Mustelinae ,
@@ -366,6 +502,10 @@
 ###  http://www.semanticweb.org/2026/lasicoviti#NorekEvropsky
 :NorekEvropsky rdf:type owl:Class ;
                rdfs:subClassOf :Norek ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :maMistoVyskytu ;
+                                 owl:someValuesFrom :Evropa
+                               ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty :partiDoPodceledi ;
                                  owl:someValuesFrom :Mustelinae
@@ -398,6 +538,18 @@
 :RosomakSibirsky rdf:type owl:Class ;
                  rdfs:subClassOf :Rosomak ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty :maMistoVyskytu ;
+                                   owl:someValuesFrom :Asie
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :maMistoVyskytu ;
+                                   owl:someValuesFrom :Evropa
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :maMistoVyskytu ;
+                                   owl:someValuesFrom :SeverniAmerika
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty :partiDoPodceledi ;
                                    owl:someValuesFrom :Mustelinae
                                  ] ,
@@ -412,9 +564,33 @@
                  rdfs:label "Gulo gulo"@la .
 
 
-###  http://www.semanticweb.org/2026/lasicoviti#Sobol
-:Sobol rdf:type owl:Class ;
-       rdfs:subClassOf :Zivocich .
+###  http://www.semanticweb.org/2026/lasicoviti#SeverniAfrika
+:SeverniAfrika rdf:type owl:Class ;
+               rdfs:subClassOf :MistoVyskytu .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#SeverniAmerika
+:SeverniAmerika rdf:type owl:Class ;
+                rdfs:subClassOf :MistoVyskytu .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#SeverniTichomori
+:SeverniTichomori rdf:type owl:Class ;
+                  rdfs:subClassOf :MistoVyskytu .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#SobolAsijsky
+:SobolAsijsky rdf:type owl:Class ;
+              rdfs:subClassOf :Kuna ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :maMistoVyskytu ;
+                                owl:someValuesFrom :Asie
+                              ] .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#StredniAmerika
+:StredniAmerika rdf:type owl:Class ;
+                rdfs:subClassOf :MistoVyskytu .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Taxidea
@@ -438,6 +614,14 @@
 :TchorStepni rdf:type owl:Class ;
              rdfs:subClassOf :Tchor ,
                              [ rdf:type owl:Restriction ;
+                               owl:onProperty :maMistoVyskytu ;
+                               owl:someValuesFrom :Asie
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :maMistoVyskytu ;
+                               owl:someValuesFrom :Evropa
+                             ] ,
+                             [ rdf:type owl:Restriction ;
                                owl:onProperty :partiDoPodceledi ;
                                owl:someValuesFrom :Mustelinae
                              ] ,
@@ -455,6 +639,14 @@
 ###  http://www.semanticweb.org/2026/lasicoviti#TchorTmavy
 :TchorTmavy rdf:type owl:Class ;
             rdfs:subClassOf :Tchor ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :maMistoVyskytu ;
+                              owl:someValuesFrom :Asie
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :maMistoVyskytu ;
+                              owl:someValuesFrom :Evropa
+                            ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty :partiDoPodceledi ;
                               owl:someValuesFrom :Mustelinae
@@ -479,6 +671,10 @@
 :VydraJihoamericka rdf:type owl:Class ;
                    rdfs:subClassOf :Vydra ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty :maMistoVyskytu ;
+                                     owl:someValuesFrom :JizniAmerika
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty :partiDoPodceledi ;
                                      owl:someValuesFrom :Lutrinae
                                    ] ,
@@ -496,6 +692,10 @@
 ###  http://www.semanticweb.org/2026/lasicoviti#VydraMala
 :VydraMala rdf:type owl:Class ;
            rdfs:subClassOf :Vydra ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :maMistoVyskytu ;
+                             owl:someValuesFrom :Asie
+                           ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :partiDoPodceledi ;
                              owl:someValuesFrom :Lutrinae
@@ -515,6 +715,10 @@
 :VydraMorska rdf:type owl:Class ;
              rdfs:subClassOf :Vydra ,
                              [ rdf:type owl:Restriction ;
+                               owl:onProperty :maMistoVyskytu ;
+                               owl:someValuesFrom :SeverniTichomori
+                             ] ,
+                             [ rdf:type owl:Restriction ;
                                owl:onProperty :partiDoPodceledi ;
                                owl:someValuesFrom :Lutrinae
                              ] ,
@@ -533,6 +737,18 @@
 :VydraRicni rdf:type owl:Class ;
             rdfs:subClassOf :Vydra ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty :maMistoVyskytu ;
+                              owl:someValuesFrom :Asie
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :maMistoVyskytu ;
+                              owl:someValuesFrom :Evropa
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :maMistoVyskytu ;
+                              owl:someValuesFrom :SeverniAfrika
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty :partiDoPodceledi ;
                               owl:someValuesFrom :Lutrinae
                             ] ,
@@ -550,6 +766,10 @@
 ###  http://www.semanticweb.org/2026/lasicoviti#VydraSeveroamericka
 :VydraSeveroamericka rdf:type owl:Class ;
                      rdfs:subClassOf :Vydra ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :maMistoVyskytu ;
+                                       owl:someValuesFrom :SeverniAmerika
+                                     ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty :partiDoPodceledi ;
                                        owl:someValuesFrom :Lutrinae
@@ -571,7 +791,11 @@
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Zorila
 :Zorila rdf:type owl:Class ;
-        rdfs:subClassOf :Zivocich .
+        rdfs:subClassOf :Zivocich ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :maMistoVyskytu ;
+                          owl:someValuesFrom :Afrika
+                        ] .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
