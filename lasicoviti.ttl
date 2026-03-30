@@ -69,9 +69,37 @@
 #    Classes
 #################################################################
 
+###  http://www.semanticweb.org/2026/lasicoviti#AfrickyZivocich
+:AfrickyZivocich rdf:type owl:Class .
+
+
 ###  http://www.semanticweb.org/2026/lasicoviti#Afrika
 :Afrika rdf:type owl:Class ;
         rdfs:subClassOf :MistoVyskytu .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#AmerickyZivocich
+:AmerickyZivocich rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :Zivocich
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :maMistoVyskytu ;
+                                                               owl:someValuesFrom :JizniAmerika
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :maMistoVyskytu ;
+                                                               owl:someValuesFrom :JizniMexiko
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :maMistoVyskytu ;
+                                                               owl:someValuesFrom :SeverniAmerika
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :maMistoVyskytu ;
+                                                               owl:someValuesFrom :StredniAmerika
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Arctonyx
@@ -83,6 +111,11 @@
 ###  http://www.semanticweb.org/2026/lasicoviti#Asie
 :Asie rdf:type owl:Class ;
       rdfs:subClassOf :MistoVyskytu .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#AsijskyZivocich
+:AsijskyZivocich rdf:type owl:Class ;
+                 rdfs:subClassOf :Zivocich .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Celed
@@ -104,6 +137,11 @@
 ###  http://www.semanticweb.org/2026/lasicoviti#Evropa
 :Evropa rdf:type owl:Class ;
         rdfs:subClassOf :MistoVyskytu .
+
+
+###  http://www.semanticweb.org/2026/lasicoviti#EvropskyZivocich
+:EvropskyZivocich rdf:type owl:Class ;
+                  rdfs:subClassOf :Zivocich .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Grizon
