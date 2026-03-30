@@ -70,7 +70,19 @@
 #################################################################
 
 ###  http://www.semanticweb.org/2026/lasicoviti#AfrickyZivocich
-:AfrickyZivocich rdf:type owl:Class .
+:AfrickyZivocich rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Zivocich
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :maMistoVyskytu ;
+                                                              owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                   owl:unionOf ( :Afrika
+                                                                                                 :SeverniAfrika
+                                                                                               )
+                                                                                 ]
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Afrika
@@ -83,19 +95,13 @@
                   owl:equivalentClass [ owl:intersectionOf ( :Zivocich
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty :maMistoVyskytu ;
-                                                               owl:someValuesFrom :JizniAmerika
-                                                             ]
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty :maMistoVyskytu ;
-                                                               owl:someValuesFrom :JizniMexiko
-                                                             ]
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty :maMistoVyskytu ;
-                                                               owl:someValuesFrom :SeverniAmerika
-                                                             ]
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty :maMistoVyskytu ;
-                                                               owl:someValuesFrom :StredniAmerika
+                                                               owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                    owl:unionOf ( :JizniAmerika
+                                                                                                  :JizniMexiko
+                                                                                                  :SeverniAmerika
+                                                                                                  :StredniAmerika
+                                                                                                )
+                                                                                  ]
                                                              ]
                                                            ) ;
                                         rdf:type owl:Class
@@ -115,7 +121,19 @@
 
 ###  http://www.semanticweb.org/2026/lasicoviti#AsijskyZivocich
 :AsijskyZivocich rdf:type owl:Class ;
-                 rdfs:subClassOf :Zivocich .
+                 owl:equivalentClass [ owl:intersectionOf ( :Zivocich
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :maMistoVyskytu ;
+                                                              owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                   owl:unionOf ( :Asie
+                                                                                                 :Indonesie
+                                                                                                 :JizniAsie
+                                                                                               )
+                                                                                 ]
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Celed
@@ -141,7 +159,14 @@
 
 ###  http://www.semanticweb.org/2026/lasicoviti#EvropskyZivocich
 :EvropskyZivocich rdf:type owl:Class ;
-                  rdfs:subClassOf :Zivocich .
+                  owl:equivalentClass [ owl:intersectionOf ( :Zivocich
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :maMistoVyskytu ;
+                                                               owl:someValuesFrom :Evropa
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Grizon
