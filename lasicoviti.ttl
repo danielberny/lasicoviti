@@ -84,18 +84,26 @@
 
 ###  http://www.semanticweb.org/2026/lasicoviti#maDelkuOcasuCm
 :maDelkuOcasuCm rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :maFyzickouVlastnost ;
                 rdfs:domain :Zivocich ;
                 rdfs:range xsd:float .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#maDelkuTelaCm
 :maDelkuTelaCm rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :maFyzickouVlastnost ;
                rdfs:domain :Zivocich ;
                rdfs:range xsd:float .
 
 
+###  http://www.semanticweb.org/2026/lasicoviti#maFyzickouVlastnost
+:maFyzickouVlastnost rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Zivocich .
+
+
 ###  http://www.semanticweb.org/2026/lasicoviti#maHmotnostKg
 :maHmotnostKg rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :maFyzickouVlastnost ;
               rdfs:domain :Zivocich ;
               rdfs:range xsd:float .
 
@@ -231,6 +239,10 @@
                                owl:someValuesFrom :SeverniAmerika
                              ] ,
                              [ rdf:type owl:Restriction ;
+                               owl:onProperty :maStatusOhrozeni ;
+                               owl:someValuesFrom :NejmeneDotceny
+                             ] ,
+                             [ rdf:type owl:Restriction ;
                                owl:onProperty :partiDoPodceledi ;
                                owl:someValuesFrom :Mustelinae
                              ] ,
@@ -242,7 +254,8 @@
                                owl:onProperty :patriDoRodu ;
                                owl:someValuesFrom :Galictis
                              ] ;
-             rdfs:label "Galictis vittata"@la .
+             rdfs:label "Galictis vittata"@la ,
+                        "Grizon velký"@cs .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Gulo
@@ -275,6 +288,10 @@
                                    owl:someValuesFrom :SeverniAmerika
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty :maStatusOhrozeni ;
+                                   owl:someValuesFrom :NejmeneDotceny
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty :partiDoPodceledi ;
                                    owl:someValuesFrom :Taxidiinae
                                  ] ,
@@ -286,7 +303,9 @@
                                    owl:onProperty :patriDoRodu ;
                                    owl:someValuesFrom :Taxidea
                                  ] ;
-                 rdfs:label "Taxidea taxus"@la .
+                 rdfs:label "Jezevec americký"@cs ,
+                            "Jezevec stříbrný"@cs ,
+                            "Taxidea taxus"@la .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#JezevecBelohrdly
@@ -295,6 +314,10 @@
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty :maMistoVyskytu ;
                                     owl:someValuesFrom :Asie
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :maStatusOhrozeni ;
+                                    owl:someValuesFrom :Zranitelny
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty :partiDoPodceledi ;
@@ -308,7 +331,9 @@
                                     owl:onProperty :patriDoRodu ;
                                     owl:someValuesFrom :Arctonyx
                                   ] ;
-                  rdfs:label "Arctonyx collaris"@la .
+                  rdfs:label "Arctonyx collaris"@la ,
+                             "Jezevec bělohrdlý"@cs ,
+                             "Jezevec prasečí"@cs .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#JezevecHnedy
@@ -317,6 +342,10 @@
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty :maMistoVyskytu ;
                                 owl:someValuesFrom :Indonesie
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :maStatusOhrozeni ;
+                                owl:someValuesFrom :NejmeneDotceny
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty :partiDoPodceledi ;
@@ -330,7 +359,8 @@
                                 owl:onProperty :patriDoRodu ;
                                 owl:someValuesFrom :Melogale
                               ] ;
-              rdfs:label "Melogale orientalis"@la .
+              rdfs:label "Jezevec hnědý"@cs ,
+                         "Melogale orientalis"@la .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#JezevecJaponsky
@@ -339,6 +369,10 @@
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :maMistoVyskytu ;
                                    owl:someValuesFrom :Asie
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :maStatusOhrozeni ;
+                                   owl:someValuesFrom :NejmeneDotceny
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :partiDoPodceledi ;
@@ -352,7 +386,8 @@
                                    owl:onProperty :patriDoRodu ;
                                    owl:someValuesFrom :Meles
                                  ] ;
-                 rdfs:label "Meles anakuma"@la .
+                 rdfs:label "Jezevec japonský"@cs ,
+                            "Meles anakuma"@la .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#JezevecLesni
@@ -367,6 +402,10 @@
                                 owl:someValuesFrom :Evropa
                               ] ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty :maStatusOhrozeni ;
+                                owl:someValuesFrom :NejmeneDotceny
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty :partiDoPodceledi ;
                                 owl:someValuesFrom :Melinae
                               ] ,
@@ -378,7 +417,9 @@
                                 owl:onProperty :patriDoRodu ;
                                 owl:someValuesFrom :Meles
                               ] ;
-              rdfs:label "Meles meles"@la .
+              rdfs:label "Jezevec evropský"@cs ,
+                         "Jezevec lesní"@cs ,
+                         "Meles meles"@la .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#JezevecTibetsky
@@ -387,6 +428,10 @@
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :maMistoVyskytu ;
                                    owl:someValuesFrom :Asie
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :maStatusOhrozeni ;
+                                   owl:someValuesFrom :NejmeneDotceny
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :partiDoPodceledi ;
@@ -400,7 +445,8 @@
                                    owl:onProperty :patriDoRodu ;
                                    owl:someValuesFrom :Arctonyx
                                  ] ;
-                 rdfs:label "Arctonyx albogularis"@la .
+                 rdfs:label "Arctonyx albogularis"@la ,
+                            "Jezevec tibetský"@cs .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#JizniAmerika
@@ -440,6 +486,10 @@
                                  owl:someValuesFrom :StredniAmerika
                                ] ,
                                [ rdf:type owl:Restriction ;
+                                 owl:onProperty :maStatusOhrozeni ;
+                                 owl:someValuesFrom :NejmeneDotceny
+                               ] ,
+                               [ rdf:type owl:Restriction ;
                                  owl:onProperty :partiDoPodceledi ;
                                  owl:someValuesFrom :Mustelinae
                                ] ,
@@ -451,7 +501,8 @@
                                  owl:onProperty :patriDoRodu ;
                                  owl:someValuesFrom :Eira
                                ] ;
-               rdfs:label "Eira barbara"@la .
+               rdfs:label "Eira barbara"@la ,
+                          "Kuna brazilská"@cs .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Lasice
@@ -475,6 +526,10 @@
                                    owl:someValuesFrom :SeverniAmerika
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty :maStatusOhrozeni ;
+                                   owl:someValuesFrom :NejmeneDotceny
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty :partiDoPodceledi ;
                                    owl:someValuesFrom :Mustelinae
                                  ] ,
@@ -486,7 +541,12 @@
                                    owl:onProperty :patriDoRodu ;
                                    owl:someValuesFrom :Mustela
                                  ] ;
-                 rdfs:label "Mustela erminea"@la .
+                 owl:disjointWith :LasiceKolcava ;
+                 rdfs:label "Hranostaj obecný"@cs ,
+                            "Kuna hranostaj"@cs ,
+                            "Lasice hranostaj"@cs ,
+                            "Lasice malá"@cs ,
+                            "Mustela erminea"@la .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#LasiceKolcava
@@ -509,6 +569,10 @@
                                  owl:someValuesFrom :SeverniAmerika
                                ] ,
                                [ rdf:type owl:Restriction ;
+                                 owl:onProperty :maStatusOhrozeni ;
+                                 owl:someValuesFrom :NejmeneDotceny
+                               ] ,
+                               [ rdf:type owl:Restriction ;
                                  owl:onProperty :partiDoPodceledi ;
                                  owl:someValuesFrom :Mustelinae
                                ] ,
@@ -520,7 +584,9 @@
                                  owl:onProperty :patriDoRodu ;
                                  owl:someValuesFrom :Mustela
                                ] ;
-               rdfs:label "Mustela nivalis"@la .
+               rdfs:label "Lasice kolčava"@cs ,
+                          "Lasice obecná"@cs ,
+                          "Mustela nivalis"@la .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Lontra
@@ -564,6 +630,10 @@
                                  owl:someValuesFrom :JizniAsie
                                ] ,
                                [ rdf:type owl:Restriction ;
+                                 owl:onProperty :maStatusOhrozeni ;
+                                 owl:someValuesFrom :NejmeneDotceny
+                               ] ,
+                               [ rdf:type owl:Restriction ;
                                  owl:onProperty :partiDoPodceledi ;
                                  owl:someValuesFrom :Mellivorinae
                                ] ,
@@ -575,7 +645,8 @@
                                  owl:onProperty :patriDoRodu ;
                                  owl:someValuesFrom :Mellivora
                                ] ;
-               rdfs:label "Mellivora capensis"@la .
+               rdfs:label "Medojed kapský"@cs ,
+                          "Mellivora capensis"@la .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Meles
@@ -661,6 +732,10 @@
                                  owl:someValuesFrom :Evropa
                                ] ,
                                [ rdf:type owl:Restriction ;
+                                 owl:onProperty :maStatusOhrozeni ;
+                                 owl:someValuesFrom :KritickyOhrozeny
+                               ] ,
+                               [ rdf:type owl:Restriction ;
                                  owl:onProperty :partiDoPodceledi ;
                                  owl:someValuesFrom :Mustelinae
                                ] ,
@@ -672,7 +747,8 @@
                                  owl:onProperty :patriDoRodu ;
                                  owl:someValuesFrom :Mustela
                                ] ;
-               rdfs:label "Mustela lutreola"@la .
+               rdfs:label "Mustela lutreola"@la ,
+                          "Norek evropský"@cs .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Ohrozeny
@@ -714,6 +790,10 @@
                                    owl:someValuesFrom :SeverniAmerika
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty :maStatusOhrozeni ;
+                                   owl:someValuesFrom :NejmeneDotceny
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty :partiDoPodceledi ;
                                    owl:someValuesFrom :Mustelinae
                                  ] ,
@@ -725,7 +805,8 @@
                                    owl:onProperty :patriDoRodu ;
                                    owl:someValuesFrom :Gulo
                                  ] ;
-                 rdfs:label "Gulo gulo"@la .
+                 rdfs:label "Gulo gulo"@la ,
+                            "Rosomák sibiřský"@cs .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#SeverniAfrika
@@ -756,6 +837,10 @@
                                 owl:someValuesFrom :Asie
                               ] ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty :maStatusOhrozeni ;
+                                owl:someValuesFrom :NejmeneDotceny
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty :partiDoPodceledi ;
                                 owl:someValuesFrom :Mustelinae
                               ] ,
@@ -767,9 +852,9 @@
                                 owl:onProperty :patriDoRodu ;
                                 owl:someValuesFrom :Martes
                               ] ;
-              rdfs:label "Martes zibellina"@la ,
-                         "kuna sobol"@cs ,
-                         "sobol sibiřský"@cs .
+              rdfs:label "Kuna sobol"@cs ,
+                         "Martes zibellina"@la ,
+                         "Sobol sibiřský"@cs .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#StatusOhrozeni
@@ -810,6 +895,10 @@
                                owl:someValuesFrom :Evropa
                              ] ,
                              [ rdf:type owl:Restriction ;
+                               owl:onProperty :maStatusOhrozeni ;
+                               owl:someValuesFrom :NejmeneDotceny
+                             ] ,
+                             [ rdf:type owl:Restriction ;
                                owl:onProperty :partiDoPodceledi ;
                                owl:someValuesFrom :Mustelinae
                              ] ,
@@ -821,7 +910,11 @@
                                owl:onProperty :patriDoRodu ;
                                owl:someValuesFrom :Mustela
                              ] ;
-             rdfs:label "Mustela eversmanii"@la .
+             owl:disjointWith :TchorTmavy ;
+             rdfs:label "Mustela eversmanii"@la ,
+                        "Tchoř plavý"@cs ,
+                        "Tchoř stepní"@cs ,
+                        "Tchoř světlý"@cs .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#TchorTmavy
@@ -836,6 +929,10 @@
                               owl:someValuesFrom :Evropa
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty :maStatusOhrozeni ;
+                              owl:someValuesFrom :NejmeneDotceny
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty :partiDoPodceledi ;
                               owl:someValuesFrom :Mustelinae
                             ] ,
@@ -847,7 +944,9 @@
                               owl:onProperty :patriDoRodu ;
                               owl:someValuesFrom :Mustela
                             ] ;
-            rdfs:label "Mustela putorius"@la .
+            rdfs:label "Kuna tchoř"@cs ,
+                       "Mustela putorius"@la ,
+                       "Tchoř tmavý"@cs .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#TemerOhrozeny
@@ -868,6 +967,10 @@
                                      owl:someValuesFrom :JizniAmerika
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty :maStatusOhrozeni ;
+                                     owl:someValuesFrom :TemerOhrozeny
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty :partiDoPodceledi ;
                                      owl:someValuesFrom :Lutrinae
                                    ] ,
@@ -879,7 +982,10 @@
                                      owl:onProperty :patriDoRodu ;
                                      owl:someValuesFrom :Lontra
                                    ] ;
-                   rdfs:label "Lontra longicaudis"@la .
+                   rdfs:label "Lontra longicaudis"@la ,
+                              "Vydra horská"@cs ,
+                              "Vydra jihoamerická"@cs ,
+                              "Vydra širokočelá"@cs .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#VydraMala
@@ -888,6 +994,10 @@
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :maMistoVyskytu ;
                              owl:someValuesFrom :Asie
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :maStatusOhrozeni ;
+                             owl:someValuesFrom :Zranitelny
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :partiDoPodceledi ;
@@ -901,7 +1011,8 @@
                              owl:onProperty :patriDoRodu ;
                              owl:someValuesFrom :Lutra
                            ] ;
-           rdfs:label "Lutra cinerea"@la .
+           rdfs:label "Lutra cinerea"@la ,
+                      "Vydra malá"@cs .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#VydraMorska
@@ -910,6 +1021,10 @@
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :maMistoVyskytu ;
                                owl:someValuesFrom :SeverniTichomori
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :maStatusOhrozeni ;
+                               owl:someValuesFrom :Ohrozeny
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :partiDoPodceledi ;
@@ -924,8 +1039,7 @@
                                owl:someValuesFrom :Enhydra
                              ] ;
              rdfs:label "Enhydra lutris"@la ,
-                        "kalan"@cs ,
-                        "vydra sealová"@cs .
+                        "Vydra mořská"@cs .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#VydraRicni
@@ -944,6 +1058,10 @@
                               owl:someValuesFrom :SeverniAfrika
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty :maStatusOhrozeni ;
+                              owl:someValuesFrom :TemerOhrozeny
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty :partiDoPodceledi ;
                               owl:someValuesFrom :Lutrinae
                             ] ,
@@ -955,7 +1073,9 @@
                               owl:onProperty :patriDoRodu ;
                               owl:someValuesFrom :Lutra
                             ] ;
-            rdfs:label "Lutra lutra"@la .
+            rdfs:label "Lutra lutra"@la ,
+                       "Vydra evropská"@cs ,
+                       "Vydra říční"@cs .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#VydraSeveroamericka
@@ -964,6 +1084,10 @@
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty :maMistoVyskytu ;
                                        owl:someValuesFrom :SeverniAmerika
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :maStatusOhrozeni ;
+                                       owl:someValuesFrom :NejmeneDotceny
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty :partiDoPodceledi ;
@@ -977,7 +1101,9 @@
                                        owl:onProperty :patriDoRodu ;
                                        owl:someValuesFrom :Lontra
                                      ] ;
-                     rdfs:label "Lontra canadensis"@la .
+                     rdfs:label "Lontra canadensis"@la ,
+                                "Vydra kanadská"@cs ,
+                                "Vydra severoamerická"@cs .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Vyhynuly
@@ -1008,6 +1134,10 @@
                                owl:someValuesFrom :Afrika
                              ] ,
                              [ rdf:type owl:Restriction ;
+                               owl:onProperty :maStatusOhrozeni ;
+                               owl:someValuesFrom :NejmeneDotceny
+                             ] ,
+                             [ rdf:type owl:Restriction ;
                                owl:onProperty :partiDoPodceledi ;
                                owl:someValuesFrom :Mustelinae
                              ] ,
@@ -1019,12 +1149,98 @@
                                owl:onProperty :patriDoRodu ;
                                owl:someValuesFrom :Ictonyx
                              ] ;
-             rdfs:label "Ictonyx striatus"@la .
+             rdfs:label "Ictonyx striatus"@la ,
+                        "Zorila velká"@cs .
 
 
 ###  http://www.semanticweb.org/2026/lasicoviti#Zranitelny
 :Zranitelny rdf:type owl:Class ;
             rdfs:subClassOf :StatusOhrozeni .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Arctonyx
+                :Eira
+                :Enhydra
+                :Galictis
+                :Gulo
+                :Ictonyx
+                :Lontra
+                :Lutra
+                :Martes
+                :Meles
+                :Mellivora
+                :Melogale
+                :Mustela
+                :Taxidea
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Grizon
+                :Jezevec
+                :Kuna
+                :Lasice
+                :Medojed
+                :Norek
+                :Rosomak
+                :Sobol
+                :Tchor
+                :Vydra
+                :Zorila
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :JezevecAmericky
+                :JezevecBelohrdly
+                :JezevecHnedy
+                :JezevecJaponsky
+                :JezevecLesni
+                :JezevecTibetsky
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :KritickyOhrozeny
+                :NedostatecneUdaje
+                :Nehodnoceny
+                :NejmeneDotceny
+                :Ohrozeny
+                :RegionalneVyhynuly
+                :TemerOhrozeny
+                :Vyhynuly
+                :VyhynulyVPrirode
+                :Zranitelny
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Lutrinae
+                :Melinae
+                :Mellivorinae
+                :Mustelinae
+                :Taxidiinae
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :VydraJihoamericka
+                :VydraMala
+                :VydraMorska
+                :VydraRicni
+                :VydraSeveroamericka
+              )
+] .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
